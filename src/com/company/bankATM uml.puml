@@ -1,0 +1,45 @@
+@startuml
+
+class AutenticationService{
+//Autentication
++ validateUserAndPassword(dni: String, password: String);
+//first if
+
+}
+class AccountService{
+//get the account data
++ getAccount(dni);
+//Account => User identification and current balance
+}
+
+class CashierService{
+//request the cash from the bank
+//withdraw money from the bank
++ giveMoney(AmountToWithdraw);
+// verify that the user has the money to withdraw
+}
+
+interface interfaceBank{
++ withdrawMoney(dni: String, password: String, amount: double)
+}
+
+class Bank {
++ withdrawMoney(dni: String, password: String, amount: double)
+}
+
+class Account{
+- dni;
+- password;
+- currentBalance;
+}
+
+
+AutenticationService .up.|> Bank
+AccountService .up.|> Bank
+CashierService .up.|> Bank
+Bank .up.|> interfaceBank
+Account .right.> Bank
+
+
+
+@enduml
