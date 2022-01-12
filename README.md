@@ -7,5 +7,5 @@
 
 >I implemented the following DESIGN PATTERNS:
 
-> facade:bridge_at_night: :diamond_shape_with_a_dot_inside:
+> facade :diamond_shape_with_a_dot_inside:
 
